@@ -1,0 +1,550 @@
+/* bioThai */
+
+/***** styles for the html *****/
+html {
+    background-color: #0c0c0c; 
+    background-image: url("../images/synthwave_by_rafael-de-jonghe.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center bottom;
+    background-size: cover;
+    
+    height: 100%;
+}
+
+/***** styles for the body *****/
+body { 
+    color: #191919;
+    font-size: 100%;
+    font-family: 'DM Mono', monospace;
+    margin: 0 auto 0 auto; 
+    width: 92%;
+    min-width: 450px;
+    max-width: 1200px;
+    min-height: 100%;
+    
+    display: grid;
+    grid-template-columns: minmax(140px,17%) 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 0;
+    grid-template-areas: 
+        "nav header"
+        "nav content"
+        "nav footer";
+}
+
+/***** styles for the header *****/
+header {
+    font-family: 'Major Mono Display', monospace;
+    margin: 0;
+    background-color: #191919;
+    border-top: 3px solid darkmagenta;
+    grid-area: header;
+}
+header h1 {
+    font-size: 240%;
+    text-align:center;
+	margin: 0;
+	padding: .4em .3em .3em .3em;
+    margin: 0;
+    color: cyan;
+    text-shadow: 0px 0px 4px turquoise;
+}
+header h2 { 
+    font-size: 140%;
+    text-align: center;
+    margin: 0;
+    padding: .4em .3em .7em .3em;
+    color: lawngreen;
+    text-shadow: 0px 0px 3px lime;
+}
+header h1:hover {
+    filter: blur(2px);
+} 
+header h2:hover {
+    filter: blur(2px);
+}
+
+/***** styles for the nav *****/
+nav {
+    margin: 0;
+    padding: 1em 1em 1em 1em;
+	text-align: center;
+	font-size: 100%;
+    background-color: #0c0c0c;
+    grid-area: nav;
+}
+nav a {
+    text-decoration: none;
+    padding: .6em;
+    display: block;
+	color: darkcyan;
+}
+nav a:hover, nav a:focus {
+	color: darkmagenta;
+}
+nav #gg_logo {
+    display: block;
+    margin: 0 auto 0 auto;
+	padding: 1em .6em 1em .6em;
+    width: 80%;
+    max-width: 128px;
+    
+    transition: .07s;
+}
+nav #gg_logo:hover, nav #gg_logo:focus {
+    transform: rotate(-90deg);
+    filter: saturate(.05);
+}
+#mobile_nav_container, #mobile_nav {
+    display: none;
+}
+
+
+/***** styles for the main content *****/
+#content {
+	padding: 1.5em 2.2em 1.5em 2.2em;
+	overflow: scroll;
+    color: #191919;
+    background-color: gainsboro;
+    grid-area: content;
+}
+#content a {
+    text-decoration: none;
+    color: darkcyan;
+}
+#content a:hover, #content a:focus {
+    color: darkmagenta;
+}
+#content h2 {
+    margin: 0;
+    padding: .3em 0;
+}
+#content .games_list_container {
+    padding: .5em 2em;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    grid-gap: 1.2rem;
+}
+#content .games_list_container .games_list {
+    border: 2px solid darkcyan;
+    border-radius: 10px;
+    text-align: center;
+    height: 98%;
+    background-color: lightgray;
+}
+#content .games_list_container .games_list:hover {
+    border-color: darkmagenta;
+    background-color: darkgray;
+}
+#content .games_list_container .games_list img {
+    width: 65%;
+    max-width: 128px;
+    padding: 1em .5em .5em .5em;
+}
+#content .games_list_container .games_list div {
+    margin: 0;
+    padding: 0 .5em .5em .5em;
+}
+
+/***** styles for the footer *****/
+footer { 
+    font-size: 80%;
+    text-align: center;
+    color: #191919;
+    background-color: gainsboro;
+    border-bottom: 2px solid darkmagenta;
+    grid-area: footer;
+    align-self: end;
+}
+footer p {
+    padding: .7em;
+    margin: 0;
+}
+footer img {
+    max-width: 28px;
+    padding: 0 .3em .3em .3em;
+}
+
+/***** styles for dark mode *****/
+#toggleIcon {
+    max-width: 24px;
+    padding: .75em;
+    transition: .01s;
+}
+#toggleIcon:hover, #toggleIcon:focus {
+    filter: saturate(3);
+}
+
+.darkMode {
+    background-color: #242424 !important;
+    color: gainsboro !important;
+}
+.darkMode h2 {
+    color: darkmagenta;
+}
+
+.darkMode a {
+    color: darkcyan !important;
+}
+.darkMode a:hover, .darkMode a:focus {
+    color: darkmagenta !important;
+}
+.darkMode input[type="button"],
+.darkMode input[type="reset"]
+{
+    color: #191919;
+}
+
+.darkMode #encoder_table th, 
+.darkMode #boggle_table th,
+.darkMode #fortune_table th {
+    background-color: #191919;
+}
+.darkMode .games_list_container .games_list {
+    background-color: #191919 !important;
+}
+
+/***** styles for miscellaneous elements *****/
+table { 
+	border-collapse: collapse; 
+}
+
+/***** styles for the About Greg page *****/
+#about_greg_img {
+    width: 70%;
+    max-width: 350px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 5px;
+}
+
+/***** styles for the fortune teller pages *****/
+#content form.madame_vadoma {
+    margin: 0 auto;
+    padding: .5em 1em 1.5em 1em;
+    text-align: center;
+}
+figure.madame_vadoma {
+    margin: 0 auto;
+    padding: 0 1em 1em 1em;
+    text-align: center;
+}
+figure.madame_vadoma figcaption {
+    padding: .2em 1em;
+    font-size: 80%;
+}
+figure.madame_vadoma div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start; /*to prevent images from stretching vertically to their natural height in Safari*/
+}
+figure.madame_vadoma div img {
+    width: 25%;
+    max-width: 350px;
+}
+figure.madame_vadoma div #vadoma_img1 {
+    filter: hue-rotate(290deg);
+    border-radius: 5px 0 0 5px;
+}
+figure.madame_vadoma div #vadoma_img3 {
+    filter: hue-rotate(180deg);
+    border-radius: 0 5px 5px 0;
+}
+p.madame_vadoma {
+    text-align: center;
+}
+#fortuneInput {
+    color: #191919;
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+form.madame_vadoma div {
+    text-align: center;
+    padding: .5em 0 0 0;
+}
+#fortune_table_container {
+    overflow: scroll;
+    margin: 0 auto;
+    width: 80%;
+    padding: .4em;
+}
+#fortune_table {
+    margin: 0 auto;
+    table-layout: fixed;
+    width: 100%;
+}
+#fortune_table th {
+    background-color: gray;
+    color: darkmagenta;
+}
+#fortune_table th, #fortune_table td {
+    padding: .5em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+/***** styles for the encoder pages *****/
+#encoder_form {
+    margin: 0 auto;
+    padding: .5em 1em 1em 1.5em;
+}
+#encoder_input {
+    color: #191919;
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+}
+#encoder_form div {
+    width: auto;
+    text-align: center;
+    padding: .5em 0 0 0;
+}
+#encoder_table_container {
+    overflow: scroll;
+    margin: 0 auto;
+    width: 80%;
+}
+#encoder_table {
+    margin: 0 auto;
+    table-layout: fixed;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+#encoder_table th {
+    background-color: gray;
+    color: darkmagenta;
+}
+#encoder_table th, #encoder_table td {
+    padding: .5em;
+    text-align: center;
+    border-radius: 5px;
+}
+
+
+/***** styles for the tictactoe game *****/
+#tictactoe_form
+{
+    width: 100%;
+}
+#tictactoe_form #table_container {
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+    overflow: scroll;
+}
+#tictactoe_form table {
+    width: 100%;
+    text-align: center;
+}
+#tictactoe_form table td {
+    padding: .5em 0;
+    border: none;
+}
+#tictactoe_form table .tictactoe_input {
+    width: 80%;
+    font-size: 300%;
+    font-weight: bold;
+    color: #191919;
+    text-align: center;
+    border: 2px solid gray;
+    border-radius: 5px;
+}
+#tictactoe_form #resetButton {
+    display: block;
+    margin: 1em auto;
+    padding: .4em;
+    width: 10em;
+}
+
+
+/***** styles for the game of 15*****/
+#game15_table_container {
+    width: 80%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 0 0 1em 0;
+    text-align: center; 
+    overflow: scroll;   
+}
+#game15_table_container table {
+    width: 100%;
+    text-align: center; 
+}
+#game15_table_container table caption {
+    padding: .4em;
+}
+#game15_table_container table td {
+    width: 25%;
+    font-size: 270%;
+    font-weight: bold;
+    /*background-color: whitesmoke;
+    color: #191919;*/
+    text-align: center;
+    border: 2px solid gray;
+}
+#game15_table_container table td:hover {
+    background-color: darkmagenta;
+}
+/*style for the New Game button input*/
+#game15_table_container input {
+    margin: 1em;
+    padding: .4em;
+    width: 10em;
+}
+
+/***** styles for the maze*****/
+#maze_container {
+    width: 80%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 0 0 1em 0;
+    text-align: center; 
+    overflow: scroll;   
+}
+#maze_container table {
+    width: 100%;
+    text-align: center; 
+}
+#maze_container table caption {
+    padding: .4em;
+}
+#maze_container table td {
+    width: 16.6%;
+    text-align: center;
+    padding: .5em;
+    border: none;
+}
+#maze_container table td:hover {
+    background-color: darkmagenta;
+}
+#maze_container table td img {
+    width: 100%;
+    max-width: 75px;
+}
+/*style for the New Game button input*/
+#maze_container input {
+    margin: 1em;
+    padding: .4em;
+    width: 10em;
+}
+
+/***** styles for boggle*****/
+#boggle_table_container {
+    overflow: scroll;
+    margin: 0 auto;
+    width: 80%;
+}
+#boggle_table {
+    margin: 0 auto;
+    table-layout: fixed;
+    width: 100%;
+    overflow-wrap: break-word;
+}
+#boggle_table th {
+    background-color: gray;
+    color: darkmagenta;
+}
+#boggle_table th, #boggle_table td {
+    padding: .5em;
+    text-align: center;
+    border-radius: 5px;
+}
+#boggle_table #mobile_results_heading {
+    display: none;
+}
+#boggle_table #round_count_th,
+#boggle_table #letters {
+    font-size: 150%;
+    padding: .25em .5em .25em .5em;
+}
+#boggle_user_input {
+    color: #191919;
+    margin-bottom: .5em;
+}
+
+/*style for the boggle game buttons*/
+.boggle_button {
+    display: block;
+    margin: 1em auto;
+    padding: .4em;
+    width: 10em;
+}
+
+
+/**** tablet landscape (1100px or less) ****/
+@media only screen and (max-width: 1100px)
+{
+    #content .games_list_container {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+    #tictac_game_listing {
+        display: none;
+    }
+}
+
+/**** tablet portrait (900px or less) ****/
+@media only screen and (max-width: 900px)
+{
+    #content .games_list_container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, auto);
+        padding: .5em 1.5em;
+    }
+    #tictac_game_listing {
+        display: block;
+    }
+    #boggle_table th, #boggle_table td {
+        display: block;
+    }
+    #boggle_table #desktop_results_heading {
+        display: none;
+    }
+    #boggle_table #mobile_results_heading {
+        display: block;
+    }
+}
+
+/**** phone landscape (650px or less) ****/
+@media only screen and (max-width: 650px)
+{
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-gap: 0;
+        grid-template-areas: 
+            "header"
+            "nav"
+            "content"
+            "footer";
+    }
+    #desktop_nav {
+        display: none;
+    }
+    #mobile_nav_container {
+        grid-area: nav;
+        display: block;
+        background-color: #292929;
+        text-align: center;
+    }
+    #mobile_nav_container img {
+        max-width: 35px;
+        padding: .5em 1em;
+    }
+    #mobile_nav_icon_container {
+        display: block;
+        float: right;
+        width: 50%;
+        text-align: center;
+        background-color: darkcyan;
+    }
+    #content .games_list_container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, auto);
+    }
+}

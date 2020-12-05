@@ -1,0 +1,137 @@
+<!--
+bioThai
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../favicon.ico">
+
+    <title>Greg's Games | Hive and Seek</title>
+    
+    <link rel="stylesheet" href="../../styles/normalize.css">
+    <link href="../../styles/greg.css" rel="stylesheet" type="text/css">
+    
+    <!--link for Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!--scripts for toggle dark mode and cookie-->
+    <script type="text/javascript" src="../../js/toggleDark.js"></script>
+    <script src="../../js/toggleDark_cookie.js"></script>
+    <!--script for mobile menu-->
+    <script src="../../js/mobileMenu.js"></script>
+    
+    <!--script for maze game-->
+    <script src="../../js/mazeGame.js"></script>
+</head>
+    
+<body onload="checkCookie(); mazeObj.setup();">
+    <header>
+        <h1 id="logo">Greg's Games</h1>
+        <h2 align="center">Play: Hive and Seek</h2>
+    </header>
+    
+    <nav id="desktop_nav">
+        <a href="../landing.html"><img id="gg_logo" src="../../images/shut-down.png" alt="Greg's Game logo"></a> 
+        <a href="../index.html">Home</a>
+        <a href="../play_games.html">Play a Game</a>
+        <a href="../greg.html">About Greg</a>
+        <a href="../credits.html">Credits</a>
+        
+        <!--clickable image toggle for light/dark mode-->
+        <img src="../../images/last-quarter.png" alt="Dark mode toggle" id="toggleIcon" onclick="toggleDark();">
+    </nav>
+    
+    <div id="mobile_nav_container">
+        <!--clickable image toggle for light/dark mode-->
+        <img src="../../images/last-quarter.png" alt="Dark mode toggle" id="toggleIcon" onclick="toggleDark();">
+        <!--mobile nav icon-->
+        <div id="mobile_nav_icon_container" onclick="mobileMenu();">
+            <img src="../../images/mobile_menu2.png" alt="mobile_menu_icon" id="mobile_nav_icon">
+        </div>
+        
+        <nav id="mobile_nav">
+            <a href="../landing.html"><img id="gg_logo" src="../../images/shut-down.png" alt="Greg's Game logo"></a>
+            <a href="../index.html">Home</a>
+            <a href="../play_games.html">Play a Game</a>
+            <a href="../greg.html">About Greg</a>           
+            <a href="../credits.html">Credits</a>
+        </nav>
+    </div>
+
+    <main id="content">
+        <p>Click to move the bee up, down, right, or left into another spot. There are hidden dangers in the flower field that you need to avoid. To win, you must collect nectar from at least 12 flowers before returning to the hive. Like in nature, sometimes you're unlucky and just can't win. Such is the life of a bee.</p>
+
+        <!--wrap table in a div container so overflow can be set, making table "responsive"-->
+        <div id="maze_container">   
+            <table>
+                <caption id="maze_table_caption">&nbsp;</caption>
+                <tr>
+                    <td id="cell00" onclick="mazeObj.doClick(0,0);"></td>
+                    <td id="cell01" onclick="mazeObj.doClick(0,1);"></td>
+                    <td id="cell02" onclick="mazeObj.doClick(0,2);"></td>
+                    <td id="cell03" onclick="mazeObj.doClick(0,3);"></td>
+                    <td id="cell04" onclick="mazeObj.doClick(0,4);"></td>
+                    <td id="cell05" onclick="mazeObj.doClick(0,5);"></td>
+                </tr>
+                
+                <tr>
+                    <td id="cell10" onclick="mazeObj.doClick(1,0);"></td>
+                    <td id="cell11" onclick="mazeObj.doClick(1,1);"></td>
+                    <td id="cell12" onclick="mazeObj.doClick(1,2);"></td>
+                    <td id="cell13" onclick="mazeObj.doClick(1,3);"></td>
+                    <td id="cell14" onclick="mazeObj.doClick(1,4);"></td>
+                    <td id="cell15" onclick="mazeObj.doClick(1,5);"></td>
+                </tr>
+                
+                <tr>
+                    <td id="cell20" onclick="mazeObj.doClick(2,0);"></td>
+                    <td id="cell21" onclick="mazeObj.doClick(2,1);"></td>
+                    <td id="cell22" onclick="mazeObj.doClick(2,2);"></td>
+                    <td id="cell23" onclick="mazeObj.doClick(2,3);"></td>
+                    <td id="cell24" onclick="mazeObj.doClick(2,4);"></td>
+                    <td id="cell25" onclick="mazeObj.doClick(2,5);"></td>
+                </tr>
+                
+                <tr>
+                    <td id="cell30" onclick="mazeObj.doClick(3,0);"></td>
+                    <td id="cell31" onclick="mazeObj.doClick(3,1);"></td>
+                    <td id="cell32" onclick="mazeObj.doClick(3,2);"></td>
+                    <td id="cell33" onclick="mazeObj.doClick(3,3);"></td>
+                    <td id="cell34" onclick="mazeObj.doClick(3,4);"></td>
+                    <td id="cell35" onclick="mazeObj.doClick(3,5);"></td>
+                </tr>
+                
+                <tr>
+                    <td id="cell40" onclick="mazeObj.doClick(4,0);"></td>
+                    <td id="cell41" onclick="mazeObj.doClick(4,1);"></td>
+                    <td id="cell42" onclick="mazeObj.doClick(4,2);"></td>
+                    <td id="cell43" onclick="mazeObj.doClick(4,3);"></td>
+                    <td id="cell44" onclick="mazeObj.doClick(4,4);"></td>
+                    <td id="cell45" onclick="mazeObj.doClick(4,5);"></td>
+                </tr>
+                
+                <tr>
+                    <td id="cell50" onclick="mazeObj.doClick(5,0);"></td>
+                    <td id="cell51" onclick="mazeObj.doClick(5,1);"></td>
+                    <td id="cell52" onclick="mazeObj.doClick(5,2);"></td>
+                    <td id="cell53" onclick="mazeObj.doClick(5,3);"></td>
+                    <td id="cell54" onclick="mazeObj.doClick(5,4);"></td>
+                    <td id="cell55" onclick="mazeObj.doClick(5,5);"></td>
+                </tr>
+            </table>
+            
+            <input type="button" value = "New Game" onclick="mazeObj.resetGame();">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2020 bioThai</p>
+    </footer> 
+</body>
+</html>

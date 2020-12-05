@@ -1,0 +1,111 @@
+<!--
+bioThai
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../favicon.ico">
+
+    <title>Greg's Games | Boggle 2: Electric Boggaloo</title>
+    
+    <link rel="stylesheet" href="../../styles/normalize.css">
+    <link href="../../styles/greg.css" rel="stylesheet" type="text/css">
+    
+    <!--link for Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!--scripts for toggle dark mode and cookie-->
+    <script type="text/javascript" src="../../js/toggleDark.js"></script>
+    <script src="../../js/toggleDark_cookie.js"></script>
+    
+    <!--script for mobile menu-->
+    <script src="../../js/mobileMenu.js"></script>
+    
+    <!--scripts for boggle game-->
+    <script src="../../js/boggleWordsets.js"></script>
+    <script src="../../js/boggleGame.js"></script>
+</head>
+    
+<body onload="checkCookie(); boggleObj.setup();">
+    <header>
+        <h1 id="logo">Greg's Games</h1>
+        <h2 align="center">Play: Boggle 2: Electric Boggaloo</h2>
+    </header>
+    
+    <nav id="desktop_nav">
+        <a href="../landing.html"><img id="gg_logo" src="../../images/shut-down.png" alt="Greg's Game logo"></a> 
+        <a href="../index.html">Home</a>
+        <a href="../play_games.html">Play a Game</a>
+        <a href="../greg.html">About Greg</a>
+        <a href="../credits.html">Credits</a>
+        
+        <!--clickable image toggle for light/dark mode-->
+        <img src="../../images/last-quarter.png" alt="Dark mode toggle" id="toggleIcon" onclick="toggleDark();">
+    </nav>
+    
+    <div id="mobile_nav_container">
+        <!--clickable image toggle for light/dark mode-->
+        <img src="../../images/last-quarter.png" alt="Dark mode toggle" id="toggleIcon" onclick="toggleDark();">
+        <!--mobile nav icon-->
+        <div id="mobile_nav_icon_container" onclick="mobileMenu();">
+            <img src="../../images/mobile_menu2.png" alt="mobile_menu_icon" id="mobile_nav_icon">
+        </div>
+        
+        <nav id="mobile_nav">
+            <a href="../landing.html"><img id="gg_logo" src="../../images/shut-down.png" alt="Greg's Game logo"></a>
+            <a href="../index.html">Home</a>
+            <a href="../play_games.html">Play a Game</a>
+            <a href="../greg.html">About Greg</a>           
+            <a href="../credits.html">Credits</a>
+        </nav>
+    </div>
+
+    <main id="content">
+        <p>Help Greg raise funds for the Electric Boggaloo music festival! For each round, create as many words as you can from the scrambled letters. The more words you create, the better the festival will be.</p>
+        
+        <!--wrap table in a div container so overflow can be set, making table "responsive"-->
+        <div id="boggle_table_container">
+            <table id="boggle_table">
+                <tr>
+                    <th id="round_count_th" colspan="2">Round 1 of 5</th>
+                </tr>
+                <tr>
+                    <td id="letters" colspan="2">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="text" id="boggle_user_input" placeholder="Enter a word." autofocus>
+                        <input type="button" id="add_word_button" value="+" onclick="boggleObj.addUserWord(); boggleObj.displayUserWords(); boggleObj.displayResults();">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Words Entered</th>
+                    <th id="desktop_results_heading">Results</th>
+                </tr>
+                <tr>
+                    <td id="entries">&nbsp;</td>
+                    <th id="mobile_results_heading">Results</th>
+                    <td id="results">&nbsp;</td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- a button to move on to the next scrambled letter set -->
+        <input type="button" class="boggle_button" id="next_round_button" value="Next Round >" onclick="boggleObj.newRound();">
+        
+        <!-- a button to begin new game -->
+        <input type="button" class="boggle_button" id="new_game_button" value="New Game" onclick="boggleObj.setup();">
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2020 bioThai</p>
+    </footer> 
+</body>
+</html>

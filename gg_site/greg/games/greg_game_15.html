@@ -1,0 +1,111 @@
+<!--
+bioThai
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../favicon.ico">
+
+    <title>Greg's Games | Game of 15</title>
+    
+    <link rel="stylesheet" href="../../styles/normalize.css">
+    <link href="../../styles/greg.css" rel="stylesheet" type="text/css">
+    
+    <!--link for Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!--scripts for toggle dark mode and cookie-->
+    <script type="text/javascript" src="../../js/toggleDark.js"></script>
+    <script src="../../js/toggleDark_cookie.js"></script>
+    <!--script for mobile menu-->
+    <script src="../../js/mobileMenu.js"></script>
+    
+    <!--script for game-->
+    <script src="../../js/gameOf15.js"></script>
+</head>
+    
+<body onload="checkCookie(); game15Obj.setup();">
+    <header>
+        <h1 id="logo">Greg's Games</h1>
+        <h2 align="center">Play: A Game of 15</h2>
+    </header>
+    
+    <nav id="desktop_nav">
+        <a href="../landing.html"><img id="gg_logo" src="../../images/shut-down.png" alt="Greg's Game logo"></a> 
+        <a href="../index.html">Home</a>
+        <a href="../play_games.html">Play a Game</a>
+        <a href="../greg.html">About Greg</a>
+        <a href="../credits.html">Credits</a>
+        
+        <!--clickable image toggle for light/dark mode-->
+        <img src="../../images/last-quarter.png" alt="Dark mode toggle" id="toggleIcon" onclick="toggleDark();">
+    </nav>
+    
+    <div id="mobile_nav_container">
+        <!--clickable image toggle for light/dark mode-->
+        <img src="../../images/last-quarter.png" alt="Dark mode toggle" id="toggleIcon" onclick="toggleDark();">
+        <!--mobile nav icon-->
+        <div id="mobile_nav_icon_container" onclick="mobileMenu();">
+            <img src="../../images/mobile_menu2.png" alt="mobile_menu_icon" id="mobile_nav_icon">
+        </div>
+        
+        <nav id="mobile_nav">
+            <a href="../landing.html"><img id="gg_logo" src="../../images/shut-down.png" alt="Greg's Game logo"></a>
+            <a href="../index.html">Home</a>
+            <a href="../play_games.html">Play a Game</a>
+            <a href="../greg.html">About Greg</a>           
+            <a href="../credits.html">Credits</a>
+        </nav>
+    </div>
+
+    <main id="content">
+        <p>Click to move a number up, down, left, or right into an empty slot. To win, you must arrange all numbers in consecutive order from left to right, with the 1 in the top left slot and the empty space in the bottom right slot.</p>
+
+        <!--wrap table in a div container so overflow can be set, making table "responsive"-->
+        <div id="game15_table_container">   
+            <table>
+                <caption id="game15_caption">&nbsp;</caption>
+                <tr>
+                    <td id="cell00" onclick="game15Obj.doClick(0,0);"></td>
+                    <td id="cell01" onclick="game15Obj.doClick(0,1);"></td>
+                    <td id="cell02" onclick="game15Obj.doClick(0,2);"></td>
+                    <td id="cell03" onclick="game15Obj.doClick(0,3);"></td>
+                </tr>
+                
+                <tr>
+                    <td id="cell10" onclick="game15Obj.doClick(1,0);"></td>
+                    <td id="cell11" onclick="game15Obj.doClick(1,1);"></td>
+                    <td id="cell12" onclick="game15Obj.doClick(1,2);"></td>
+                    <td id="cell13" onclick="game15Obj.doClick(1,3);"></td>
+                </tr>
+                
+                <tr>
+                    <td id="cell20" onclick="game15Obj.doClick(2,0);"></td>
+                    <td id="cell21" onclick="game15Obj.doClick(2,1);"></td>
+                    <td id="cell22" onclick="game15Obj.doClick(2,2);"></td>
+                    <td id="cell23" onclick="game15Obj.doClick(2,3);"></td>
+                </tr>
+                
+                <tr>
+                    <td id="cell30" onclick="game15Obj.doClick(3,0);"></td>
+                    <td id="cell31" onclick="game15Obj.doClick(3,1);"></td>
+                    <td id="cell32" onclick="game15Obj.doClick(3,2);"></td>
+                    <td id="cell33" onclick="game15Obj.doClick(3,3);"></td>
+                </tr>
+            </table>
+            
+            <input type="button" value = "New Game" onclick="game15Obj.placeNumbers();">
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2020 bioThai</p>
+    </footer> 
+</body>
+</html>

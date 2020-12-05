@@ -1,0 +1,114 @@
+<!--
+bioThai
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../favicon.ico">
+
+	<title>Greg's Games | Tic Tac Toe (2-player)</title>
+    
+	<link rel="stylesheet" href="../../styles/normalize.css">
+	<link href="../../styles/greg.css" rel="stylesheet" type="text/css">
+
+    <!--link for Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!--scripts for toggle dark mode and cookie-->
+    <script type="text/javascript" src="../../js/toggleDark.js"></script>
+    <script src="../../js/toggleDark_cookie.js"></script>
+    
+     <!--script for mobile menu-->
+    <script src="../../js/mobileMenu.js"></script>
+    
+    <!--script for tictactoe game-->
+    <script src="../../js/tictactoeGame.js"></script>
+   
+</head>
+
+<body onload="checkCookie();">
+    <header>
+        <h1 id="logo">Greg's Games</h1>
+        <h2 align="center">Play: Tic Tac Toe (2-player)</h2>
+    </header>
+    
+     <nav id="desktop_nav">
+        <a href="../landing.html"><img id="gg_logo" src="../../images/shut-down.png" alt="Greg's Game logo"></a> 
+        <a href="../index.html">Home</a>
+        <a href="../play_games.html">Play a Game</a>
+        <a href="../greg.html">About Greg</a>
+        <a href="../credits.html">Credits</a>
+        
+        <!--clickable image toggle for light/dark mode-->
+        <img src="../../images/last-quarter.png" alt="Dark mode toggle" id="toggleIcon" onclick="toggleDark();">
+    </nav>
+    
+    <div id="mobile_nav_container">
+        <!--clickable image toggle for light/dark mode-->
+        <img src="../../images/last-quarter.png" alt="Dark mode toggle" id="toggleIcon" onclick="toggleDark();">
+        <!--mobile nav icon-->
+        <div id="mobile_nav_icon_container" onclick="mobileMenu();">
+            <img src="../../images/mobile_menu2.png" alt="mobile_menu_icon" id="mobile_nav_icon">
+        </div>
+        
+        <nav id="mobile_nav">
+            <a href="../landing.html"><img id="gg_logo" src="../../images/shut-down.png" alt="Greg's Game logo"></a>
+            <a href="../index.html">Home</a>
+            <a href="../play_games.html">Play a Game</a>
+            <a href="../greg.html">About Greg</a>           
+            <a href="../credits.html">Credits</a>
+        </nav>
+    </div>
+
+    <main id="content">
+        <p>
+            Take turns entering X or O in each box. A player wins when they get three Xs or three Os in a row (across, down, or diagonally). 
+        </p>
+            
+        <form id="tictactoe_form">
+                    
+                <!--wrap table in a div container so overflow can be set, making table "responsive"-->
+                <div id="table_container">               
+                    <table>
+                        <caption id="tictac_caption">&nbsp;</caption>
+                        <tr>
+                            <!--onkeyup is used so that function will not be called until after a value is present in text box-->
+                            
+                            <td><input type="text" id="tictac1" class="tictactoe_input" maxlength="1"  onkeyup="change_background('tictac1');" autofocus></td>
+                            
+                            <td><input type="text" id="tictac2" class="tictactoe_input" maxlength="1" onkeyup="change_background('tictac2');"></td>
+                            
+                            <td><input type="text" id="tictac3" class="tictactoe_input" maxlength="1" onkeyup="change_background('tictac3');"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="tictac4" class="tictactoe_input" maxlength="1" onkeyup="change_background('tictac4');"></td>
+                            
+                            <td><input type="text" id="tictac5" class="tictactoe_input" maxlength="1" onkeyup="change_background('tictac5');"></td>
+                            
+                            <td><input type="text" id="tictac6" class="tictactoe_input" maxlength="1" onkeyup="change_background('tictac6');"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="tictac7" class="tictactoe_input" maxlength="1" onkeyup="change_background('tictac7');"></td>
+                            
+                            <td><input type="text" id="tictac8" class="tictactoe_input" maxlength="1" onkeyup="change_background('tictac8');"></td>
+                            
+                            <td><input type="text" id="tictac9" class="tictactoe_input" maxlength="1" onkeyup="change_background('tictac9');"></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <input type="reset" name="reset" id="resetButton" value="New Game" onclick="resetGame();">
+        </form>
+    </main>
+    
+    <footer>
+        <p>&copy; 2020 bioThai</p>
+    </footer> 
+</body>
+</html>

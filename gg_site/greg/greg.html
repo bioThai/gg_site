@@ -1,0 +1,75 @@
+<!--
+bioThai
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="favicon.ico">
+    
+    <title>Greg's Games | About Greg</title>
+    
+    <link rel="stylesheet" href="../styles/normalize.css">
+    <link rel="stylesheet" href="../styles/greg.css" >
+    
+    <!--link for Google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+   <!--scripts for toggle dark mode and cookie-->
+    <script type="text/javascript" src="../js/toggleDark.js"></script>
+    <script src="../js/toggleDark_cookie.js"></script>
+    <!--script for mobile menu-->
+    <script src="../js/mobileMenu.js"></script>
+</head>
+    
+<body onload="checkCookie();">
+    <header>
+        <h1 id="logo">Greg's Games</h1>
+        <h2 align="center">About Greg</h2>
+    </header>
+    
+    <nav id="desktop_nav">
+        <a href="landing.html"><img id="gg_logo" src="../images/shut-down.png" alt="Greg's Game logo"></a>
+        <a href="index.html">Home</a>
+        <a href="play_games.html">Play a Game</a>
+        <a href="greg.html">About Greg</a>           
+        <a href="credits.html">Credits</a>
+
+        <!--clickable image toggle for light/dark mode-->
+        <img src="../images/last-quarter.png" alt="Dark mode toggle" id="toggleIcon" onclick="toggleDark();">
+    </nav> 
+    
+    <div id="mobile_nav_container">
+        <!--clickable image toggle for light/dark mode-->
+        <img src="../images/last-quarter.png" alt="Dark mode toggle" id="toggleIcon" onclick="toggleDark();">
+        <!--mobile nav icon-->
+        <div id="mobile_nav_icon_container" onclick="mobileMenu();">
+            <img src="../images/mobile_menu2.png" alt="mobile_menu_icon" id="mobile_nav_icon">
+        </div>
+        
+        <nav id="mobile_nav">
+            <a href="landing.html"><img id="gg_logo" src="../images/shut-down.png" alt="Greg's Game logo"></a>
+            <a href="index.html">Home</a>
+            <a href="play_games.html">Play a Game</a>
+            <a href="greg.html">About Greg</a>           
+            <a href="credits.html">Credits</a>
+        </nav>
+    </div>
+    
+    <main id="content">
+        <p id="about_greg_p">Gregorina ("Greg" to her hivemates) is a honey bee living in a beautiful tax haven. She has a passion for pollen and bright colors, and dreams of one day building a space colony. Although born without hands, Greg still manages to find joy in the simplest of games and she hopes you do too.</p>
+        
+        <img id="about_greg_img" src="../images/PrairieBee.JPG" alt="honey bee on shoulder">
+    </main>    
+    
+    <footer>
+        <p>&copy; 2020 bioThai</p>
+    </footer>
+    
+</body>
+</html>
