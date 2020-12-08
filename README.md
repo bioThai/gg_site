@@ -6,11 +6,13 @@ Greg's Games is a fictitious site made for a JavaScript course. It contains vari
 
 Here are some sample images from the actual site:
 
-![Image of game page on desktop, dark mode enabled](demo_img1.png)
+![Image of game page on desktop, dark mode enabled](demo_img1.png | width=350)
 Desktop site with dark mode enabled
 
-![Image of Hive and Seek game on mobile, light mode enabled](demo_img2.png)
+
+![Image of Hive and Seek game on mobile, light mode enabled](demo_img2.png | width=350)
 Game page on mobile with default light mode enabled
 
-![Image of Hive and Seek game on mobile, dark mode enabled](demo_img3.png)
+
+![Image of Hive and Seek game on mobile, dark mode enabled](demo_img3.png | width=350)
 Game page on mobile with dark mode enabled
